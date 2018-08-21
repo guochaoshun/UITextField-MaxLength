@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // 3种方式可以设置maxLength, xib中的没有回调
     // 方式1:xib/StoryBoard中设置
     
 
