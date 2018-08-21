@@ -71,7 +71,7 @@
 - (void)defaultOverFlow {
     NSString * message = [NSString stringWithFormat:@"最多可输入%lu字",self.maxLength];
     UIAlertController *alertController=[UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
-    // 此处不会有循环应用,没毛病的,可以点击那个button试试
+    // 此处不会有循环应用,没毛病的,可以点击那个button试试,UIAlertAction是一个局部变量
     UIAlertAction *confirmAction=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self becomeFirstResponder];
     }];
