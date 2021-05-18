@@ -51,13 +51,19 @@
     if (self.maxLength == 0) {
         return ;
     }
-    
-    
-    if (self.text.length > self.maxLength) {
+//    NSLog(@"1111---%@ - length : %lu ",self.text,(unsigned long)self.text.length);
+
+    UITextRange *selectedRange = [self markedTextRange];
+    NSString * newText = [self textInRange:selectedRange];
+//    NSLog(@"2222---%@ - length : %lu ",newText,(unsigned long)newText.length);
+
+//    NSLog(@"3333--- length : %lu ",self.text.length-newText.length);
+    NSInteger selectLength = self.text.length-newText.length;
+
+    if (selectLength > self.maxLength) {
         
         [self endEditing:YES];
         self.text = [self.text substringToIndex:self.maxLength];
- 
         if (self.overFlow) {
             self.overFlow() ;
         } else {
